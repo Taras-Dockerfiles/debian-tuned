@@ -6,10 +6,10 @@ docker buildx rm multiarch
 docker buildx create --name multiarch --use
 
 # Build the Docker image
-docker buildx build --no-cache --progress=plain --push --platform linux/amd64,linux/arm64/v8 --rm -t wujidadi/debian-tuned:3.7 -t wujidadi/debian-tuned:latest . 2>&1 | tee $D/docker-build-dt-3.7.log
+docker buildx build --no-cache --progress=plain --push --platform linux/amd64,linux/arm64/v8 --rm -t wujidadi/debian-tuned:3.8 -t wujidadi/debian-tuned:latest . 2>&1 | tee $D/docker-build-dt-3.8.log
 
 # Create testing container
-docker run -d -p 50000:80 -it --name Test wujidadi/debian-tuned:3.7
+docker run -d -p 50000:80 -it --name Test wujidadi/debian-tuned:3.8
 
 # Test the container outside itself by each command
 docker exec -it Test cat /etc/os-release | grep VERSION

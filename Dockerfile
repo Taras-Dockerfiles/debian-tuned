@@ -1,7 +1,7 @@
-FROM debian:stable-20250113-slim
+FROM debian:stable-20250203-slim
 LABEL MAINTAINER="wujidadi@gmail.com"
 
-ARG vim_tag=v9.1.1054
+ARG vim_tag=v9.1.1077
 ARG nano_great_version=8
 ARG nano_version=8.3
 

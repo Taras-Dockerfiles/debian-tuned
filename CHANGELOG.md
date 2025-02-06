@@ -1,5 +1,12 @@
 # Change Log
 
+## 3.8 (2025-02-06)
+
+* OS: **Debian 12.9 Bookworm (stable-20250203-slim)**
+* Main software versions:
+  - **Vim 9.1.1077**
+  - **GNU Nano 8.3**
+
 ## 3.7 (2025-01-26)
 
 * OS: **Debian 12.9 Bookworm (stable-20250113-slim)**
