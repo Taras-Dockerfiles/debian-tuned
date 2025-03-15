@@ -1,5 +1,13 @@
 # Change Log
 
+## 20250315 (2025-03-15)
+
+* Starting from this version, we use the build date as the version number.
+* OS: **Debian 12.9 Bookworm (stable-20250224-slim)**
+* Main software versions:
+  - **Vim 9.1.1202**
+  - **GNU Nano 8.3**
+
 ## 3.8 (2025-02-06)
 
 * OS: **Debian 12.9 Bookworm (stable-20250203-slim)**
