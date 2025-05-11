@@ -1,9 +1,9 @@
-FROM debian:stable-20250224-slim
+FROM debian:bookworm-20250428
 LABEL MAINTAINER="wujidadi@gmail.com"
 
-ARG vim_tag=v9.1.1202
+ARG vim_tag=v9.1.1382
 ARG nano_great_version=8
-ARG nano_version=8.3
+ARG nano_version=8.4
 
 ENV DEBIAN_FRONTEND=noninteractive \
     LANG=en_US.UTF-8 \
