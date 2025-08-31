@@ -1,5 +1,13 @@
 # Change Log
 
+## 20250831 (2025-08-31)
+
+* OS: **Debian 12.11 Bookworm (bookworm-20250811)**
+* Main software versions:
+  - **Git v2.51.0**
+  - **Vim v9.1.1713**
+  - **GNU Nano 8.6**
+
 ## 20250720 (2025-07-20)
 
 * OS: **Debian 12.11 Bookworm (bookworm-20250630)**
