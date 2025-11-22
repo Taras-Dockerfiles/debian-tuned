@@ -1,5 +1,16 @@
 # Change Log
 
+## 20251122 (2025-11-22)
+
+* OS: **Debian 13.2 Trixie (trixie-20251117)**
+* Main software versions:
+  - **Git v2.52.0**
+  - **Vim v9.1.1924**
+  - **GNU Nano 8.7**
+* Installed two Zsh plugins:
+  - **zsh-autosuggestions**
+  - **zsh-syntax-highlighting**
+
 ## 20250831 (2025-08-31)
 
 * OS: **Debian 12.11 Bookworm (bookworm-20250811)**

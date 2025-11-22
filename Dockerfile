@@ -1,10 +1,10 @@
-FROM debian:bookworm-20250811
+FROM debian:trixie-20251117
 LABEL MAINTAINER="wujidadi@gmail.com"
 
-ARG git_version=2.51.0
-ARG vim_version=9.1.1713
+ARG git_version=2.52.0
+ARG vim_version=9.1.1924
 ARG nano_great_version=8
-ARG nano_version=8.6
+ARG nano_version=8.7
 
 ARG root_pswd
 ARG user_name=deb
@@ -34,10 +34,10 @@ RUN echo '' && \
     echo 'Installing common packages ...' && \
     echo '================================' && \
     echo '' && \
-    apt-get install -y --no-install-recommends sudo bash-completion build-essential openssl libssl-dev libpcre3 \
-    libpcre3-dev zlib1g-dev libcurl4-openssl-dev libexpat1-dev tcl gettext net-tools iputils-ping nmap lsof telnet \
+    apt-get install -y --no-install-recommends sudo bash-completion build-essential openssl libssl-dev libpcre2-dev \
+    zlib1g-dev libcurl4-openssl-dev libexpat1-dev tcl gettext net-tools iputils-ping nmap lsof telnet \
     cron rsyslog expect zip unzip p7zip-full curl wget locales zsh apt-transport-https lsb-release ca-certificates \
-    less rename tmux sntp tshark gpg gpg-agent gnupg2 && \
+    less rename tmux ntpsec-ntpdig tshark gpg gpg-agent gnupg2 && \
     echo '' && \
     echo '================================' && \
     echo 'Setting the locale ...' && \
@@ -115,6 +115,26 @@ RUN echo '' && \
     chsh -s /bin/zsh && \
     /bin/bash -c "touch /root/.oh-my-zsh/cache/{.zsh-update,grep-alias}" && \
     echo '' && \
+    echo '================================' && \
+    echo 'Changing terminal font color ...' && \
+    echo '================================' && \
+    echo '' && \
+    echo '\nexport TERM=xterm-256color' >> ~/.zshrc && \
+    echo '' && \
+    echo '==================================' && \
+    echo 'Installing zsh-autosuggestions ...' && \
+    echo '==================================' && \
+    echo '' && \
+    git clone https://github.com/zsh-users/zsh-autosuggestions /zsh/zsh-autosuggestions && \
+    echo '\nsource /zsh/zsh-autosuggestions/zsh-autosuggestions.zsh' >> ~/.zshrc && \
+    echo '' && \
+    echo '======================================' && \
+    echo 'Installing zsh-syntax-highlighting ...' && \
+    echo '======================================' && \
+    echo '' && \
+    git clone https://github.com/zsh-users/zsh-syntax-highlighting.git /zsh/zsh-syntax-highlighting && \
+    echo 'source /zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh' >> ~/.zshrc && \
+    echo '' && \
     echo '===============================================================================' && \
     echo "root: Setting Git's default pager to less for displaying unicode characters ..." && \
     echo '===============================================================================' && \
@@ -145,6 +165,9 @@ RUN echo '=========================================' && \
     curl -L https://raw.github.com/Wujidadi/Ubuntu-RC/main/home.vimrc -o /home/${user_name}/.vimrc && \
     curl -L https://raw.github.com/Wujidadi/Ubuntu-RC/main/home.zshrc -o /home/${user_name}/.zshrc && \
     sed -i "s|/home/user/.oh-my-zsh|/home/${user_name}/.oh-my-zsh|g" /home/${user_name}/.zshrc && \
+    echo '\nexport TERM=xterm-256color' >> ~/.zshrc && \
+    echo '\nsource /zsh/zsh-autosuggestions/zsh-autosuggestions.zsh' >> ~/.zshrc && \
+    echo 'source /zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh' >> ~/.zshrc && \
     curl -L https://raw.github.com/Wujidadi/Ubuntu-RC/main/myzshtheme.zsh-theme -o /home/${user_name}/.oh-my-zsh/themes/myzshtheme.zsh-theme && \
     curl -L https://raw.github.com/Wujidadi/Ubuntu-RC/main/myrootzshtheme.zsh-theme -o /home/${user_name}/.oh-my-zsh/themes/myrootzshtheme.zsh-theme && \
     echo '' && \
